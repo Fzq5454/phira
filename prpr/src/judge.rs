@@ -226,7 +226,7 @@ impl JudgeInner {
         if self.counts[0] == self.num_of_notes {
             TOTAL
         } else {
-            let score = (0.9 * self.accuracy() + self.max_combo as f64 / self.num_of_notes as f64 * 0.1) * TOTAL as f64;
+            let score = self.accuracy() * TOTAL as f64;
             score.round() as u32
         }
     }
